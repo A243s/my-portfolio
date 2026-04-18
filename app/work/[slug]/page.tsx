@@ -283,6 +283,13 @@ export default async function ProjectPage({
       </div>
 
       <Footer theme={theme} />
+
+      {/* Prevents iOS overscroll showing default background */}
+      <div
+        className="h-[50vh] -mt-1"
+        style={{ backgroundColor: theme.background }}
+        aria-hidden="true"
+      />
     </div>
   );
 }
