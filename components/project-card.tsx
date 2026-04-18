@@ -33,8 +33,6 @@ export function ProjectCard({
   className,
 }: ProjectCardProps) {
   const titleColor = theme?.accent ?? "#ffffff";
-  const metaColor = theme?.foreground ?? "rgba(255,255,255,0.85)";
-  const dotColor = theme?.muted ?? "rgba(255,255,255,0.6)";
 
   return (
     <Link
@@ -56,9 +54,9 @@ export function ProjectCard({
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
 
         {/* Title and tags overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-6">
+        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
           <h3
-            className="font-sans font-extrabold text-3xl md:text-4xl leading-[1.05] tracking-tight text-balance mb-3"
+            className="font-sans font-extrabold text-xl sm:text-2xl md:text-3xl leading-[1.05] tracking-tight text-balance mb-2 md:mb-3"
             style={{
               color: titleColor,
               textShadow: "0 2px 12px rgba(0,0,0,0.6)",
@@ -67,18 +65,18 @@ export function ProjectCard({
             {title}
           </h3>
           <p
-            className="text-[10px] font-medium uppercase tracking-wider whitespace-nowrap overflow-hidden text-ellipsis"
+            className="text-[9px] md:text-[10px] font-medium uppercase tracking-wider whitespace-nowrap overflow-hidden text-ellipsis"
             style={{
               color: titleColor,
               textShadow: "0 1px 6px rgba(0,0,0,0.7)",
             }}
           >
             <span>{category}</span>
-            <span className="mx-1.5">•</span>
+            <span className="mx-1 md:mx-1.5">•</span>
             <span>{type}</span>
             {status && (
               <>
-                <span className="mx-1.5">•</span>
+                <span className="mx-1 md:mx-1.5">•</span>
                 <span>{status}</span>
               </>
             )}

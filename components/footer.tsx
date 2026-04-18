@@ -44,9 +44,9 @@ export function Footer({ theme }: { theme?: FooterTheme }) {
       )}
       style={containerStyle}
     >
-      <div className="max-w-6xl mx-auto px-8 md:px-16 py-14 md:py-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 md:px-16 py-10 md:py-16 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-4">
         {/* Social icons */}
-        <div className="flex items-center gap-16 md:gap-20">
+        <div className="flex items-center gap-6 md:gap-10">
           <a
             href="https://linkedin.com/in/lmouidini/"
             target="_blank"
@@ -55,7 +55,7 @@ export function Footer({ theme }: { theme?: FooterTheme }) {
             style={iconStyle}
             aria-label="LinkedIn"
           >
-            <Linkedin className="w-8 h-8" />
+            <Linkedin className="w-6 h-6 md:w-8 md:h-8" />
           </a>
           <a
             href="https://www.instagram.com/resveram/"
@@ -65,7 +65,7 @@ export function Footer({ theme }: { theme?: FooterTheme }) {
             style={iconStyle}
             aria-label="Instagram"
           >
-            <InstagramIcon className="w-8 h-8" />
+            <InstagramIcon className="w-6 h-6 md:w-8 md:h-8" />
           </a>
           <a
             href="https://resveram.itch.io/"
@@ -75,38 +75,38 @@ export function Footer({ theme }: { theme?: FooterTheme }) {
             style={iconStyle}
             aria-label="itch.io"
           >
-            <ItchIcon className="w-8 h-8" />
+            <ItchIcon className="w-6 h-6 md:w-8 md:h-8" />
           </a>
         </div>
 
         {/* Email */}
         <a
           href="mailto:Lmouidini@outlook.com"
-          className={cn("transition-all duration-200 hover:opacity-70 text-base md:text-lg font-medium hidden sm:inline", !theme && "text-foreground")}
+          className={cn("transition-all duration-200 hover:opacity-70 text-sm md:text-lg font-medium", !theme && "text-foreground")}
           style={emailStyle}
         >
           Lmouidini@outlook.com
         </a>
 
         {/* Nav */}
-        <nav className="flex items-center gap-10 md:gap-12">
+        <nav className="flex items-center gap-6 md:gap-12">
           <Link
             href="/"
-            className={cn("transition-all duration-200 hover:scale-110 hover:opacity-70 text-base md:text-lg font-semibold", !theme && "text-foreground")}
+            className={cn("transition-all duration-200 hover:scale-110 hover:opacity-70 text-sm md:text-lg font-semibold", !theme && "text-foreground")}
             style={navStyle}
           >
             Work
           </Link>
           <Link
             href="/about"
-            className={cn("transition-all duration-200 hover:scale-110 hover:opacity-70 text-base md:text-lg font-semibold", !theme && "text-foreground")}
+            className={cn("transition-all duration-200 hover:scale-110 hover:opacity-70 text-sm md:text-lg font-semibold", !theme && "text-foreground")}
             style={navStyle}
           >
             About
           </Link>
           <Link
             href="/contact"
-            className={cn("transition-all duration-200 hover:scale-110 hover:opacity-70 text-base md:text-lg font-semibold", !theme && "text-foreground")}
+            className={cn("transition-all duration-200 hover:scale-110 hover:opacity-70 text-sm md:text-lg font-semibold", !theme && "text-foreground")}
             style={navStyle}
           >
             Contact

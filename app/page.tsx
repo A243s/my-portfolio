@@ -3,37 +3,14 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
-// ============================================================
-// HOME PAGE — LANDING / SHOWCASE
-// ============================================================
-// This is your landing page. Right now it shows a big "PORTFOLIO"
-// title. When you have something to showcase (a trailer, a demo,
-// a featured project), uncomment the sections below and fill in
-// your content.
-//
-// HOW TO ADD CONTENT:
-//
-// 1. YOUTUBE VIDEO — uncomment the YouTubeEmbed below and replace
-//    the ID with your video ID (the part after v= in the URL)
-//
-// 2. IMAGE or GIF — uncomment the HeroImage below and set the
-//    src to your image path in /public (e.g. "/projects/my-image.jpg")
-//
-// 3. LINK BUTTON — uncomment the LinkButton below and set the
-//    href and label
-//
-// You can combine all three — video + image + links. Just
-// uncomment what you need.
-// ============================================================
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
 
-      <main className="flex-1 flex flex-col items-center justify-center px-8 md:px-16 py-20">
+      <main className="flex-1 flex flex-col items-center justify-center px-6 md:px-16 py-20">
         {/* Big title */}
-        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold text-foreground tracking-tight text-center mb-12">
+        <h1 className="font-serif text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-foreground tracking-tight text-center mb-12">
           ABDESSLAM LMOUIDINI PORTFOLIO
         </h1>
 
