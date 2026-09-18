@@ -15,6 +15,9 @@ interface HeaderTheme {
 // STATUS CONFIGURATION — edit this section only
 // ─────────────────────────────────────────────
 
+// Show the availability dot and message. Set to true to turn them back on.
+const SHOW_STATUS = false;
+
 // 1. CHANGE THE DOT COLOR
 //    Pick one of the options below and set it as the value of STATUS_COLOR.
 //
@@ -121,71 +124,73 @@ export function Header({ theme }: { theme?: HeaderTheme }) {
           </Link>
 
           {/* Status indicator */}
-          <div className="relative group self-end mb-1">
-            {/* Pulsing dot */}
-            <span className="relative flex h-3 w-3">
-              <span
-                className={cn(
-                  "animate-ping absolute inline-flex h-full w-full rounded-full opacity-75",
-                  statusStyle.ping,
-                )}
-              />
-              <span
-                className={cn(
-                  "relative inline-flex rounded-full h-3 w-3",
-                  statusStyle.dot,
-                )}
-              />
-            </span>
+          {SHOW_STATUS && (
+            <div className="relative group self-end mb-1">
+              {/* Pulsing dot */}
+              <span className="relative flex h-3 w-3">
+                <span
+                  className={cn(
+                    "animate-ping absolute inline-flex h-full w-full rounded-full opacity-75",
+                    statusStyle.ping,
+                  )}
+                />
+                <span
+                  className={cn(
+                    "relative inline-flex rounded-full h-3 w-3",
+                    statusStyle.dot,
+                  )}
+                />
+              </span>
 
-            {/* Tooltip card */}
-            <div
-              className={cn(
-                "absolute left-1/2 -translate-x-1/2 top-full mt-3 w-72 rounded-xl px-4 py-3 shadow-lg",
-                "opacity-0 scale-95 pointer-events-none",
-                "group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto",
-                "transition-all duration-200 ease-out origin-top",
-                "border",
-                !theme
-                  ? "bg-background border-foreground/10 text-foreground"
-                  : "",
-              )}
-              style={
-                theme
-                  ? {
-                      backgroundColor: theme.background,
-                      borderColor: `${theme.foreground}18`,
-                      color: theme.foreground,
-                    }
-                  : undefined
-              }
-            >
-              {/* Arrow */}
-              <span
+              {/* Tooltip card */}
+              <div
                 className={cn(
-                  "absolute left-1/2 -translate-x-1/2 -top-1.5 w-3 h-3 rotate-45 border-t border-l",
-                  !theme ? "bg-background border-foreground/10" : "",
+                  "absolute left-1/2 -translate-x-1/2 top-full mt-3 w-72 rounded-xl px-4 py-3 shadow-lg",
+                  "opacity-0 scale-95 pointer-events-none",
+                  "group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto",
+                  "transition-all duration-200 ease-out origin-top",
+                  "border",
+                  !theme
+                    ? "bg-background border-foreground/10 text-foreground"
+                    : "",
                 )}
                 style={
                   theme
                     ? {
                         backgroundColor: theme.background,
                         borderColor: `${theme.foreground}18`,
+                        color: theme.foreground,
                       }
                     : undefined
                 }
-              />
-              <p
-                className={cn(
-                  "text-xs font-semibold uppercase tracking-widest mb-1.5",
-                  statusStyle.label,
-                )}
               >
-                Status
-              </p>
-              <p className="text-sm leading-relaxed">{STATUS_MESSAGE}</p>
+                {/* Arrow */}
+                <span
+                  className={cn(
+                    "absolute left-1/2 -translate-x-1/2 -top-1.5 w-3 h-3 rotate-45 border-t border-l",
+                    !theme ? "bg-background border-foreground/10" : "",
+                  )}
+                  style={
+                    theme
+                      ? {
+                          backgroundColor: theme.background,
+                          borderColor: `${theme.foreground}18`,
+                        }
+                      : undefined
+                  }
+                />
+                <p
+                  className={cn(
+                    "text-xs font-semibold uppercase tracking-widest mb-1.5",
+                    statusStyle.label,
+                  )}
+                >
+                  Status
+                </p>
+                <p className="text-sm leading-relaxed">{STATUS_MESSAGE}</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Nav */}
