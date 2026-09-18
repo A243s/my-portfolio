@@ -154,7 +154,7 @@ export default function About() {
                   </h4>
                   <p className="text-muted-foreground">VAL 153</p>
                   <p className="text-sm text-muted-foreground">
-                    2025 — Present
+                    2025 — 2026
                   </p>
                 </div>
                 <div>
