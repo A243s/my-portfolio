@@ -11,7 +11,11 @@ export default function Home() {
       <main className="flex-1 flex flex-col items-center justify-center px-6 md:px-16 py-20">
         {/* Big title */}
         <h1 className="font-serif text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-foreground tracking-tight text-center mb-12">
-          ABDESSLAM LMOUIDINI PORTFOLIO
+          ABDESSLAM
+          <br />
+          LMOUIDINI
+          <br />
+          PORTFOLIO
         </h1>
 
         {/* -------------------------------------------------- */}
